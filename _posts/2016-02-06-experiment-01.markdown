@@ -5,20 +5,28 @@ date:   2016-02-01 13:00
 categories: Experiments
 disqus: true
 ---
-Libraries/Dependencies/Packages - there are many names for reusable pieces of code. We are using them from the begin of software engineering. They are great in terms of saving hours, days or weeks of development. The point is that they are hard to manage manually. Downloading library by hand from author webpage is no a best way. Storing libraries on disk, or worse, keeping it in [SCM][scm] is really bad idea. Java world, for example, has their [maven][mvn] to automate dependencies management. It works ok with jars not with java scripts. How modern web resolve this problem...
+Libraries/Dependencies/Packages - there are many names for reusable pieces of code. We are using them from the begin of software engineering. They help us to resolve complex problems with relatively small effort. Nowadays, even simple projects may depend on many different sources spread across the internet. Downloading libraries by hand from the websites is no the best way to include them in our projects. Storing libraries on disk, or worse, keeping them in [VCS][vcs] is really bad idea. Staying up-to-date is another issue. Java world, for example, has their [maven][mvn] to automate dependencies management. It works ok with jars not with java scripts. How modern web resolve these problems...
 
-###Aim
-Setup project in a way that their dependencies will be managed by npm.
-###Materials
-[Node package manager][npm] (npm)
-###Procedure
-Project initialization
+###Background
+[NPM][npm] (Node package manager) has been invited to help [Node.js][node.js] developers manage their javascript dependencies. It turns out that npm can be successfully used in projects not related to the Node.js technology. Let's leave Node topic for one of the further posts. For know, you should know that Node.js is a javascript runtime providing so-called event-driven, non-blocking I/O model designed to build scalable network applications.
+<div class="tip">
+If you are still interested what Node.js is in details I highly recommend you to watch [this][what-is-node] video.
+</div>
+###NPM installation
+NPM can be installed together with Node.js using installer from official [website][node.js]. Mac or Linux users may use integrated package manager, npm is available in homebrew or yum. NPM itself is written entirely in javascript and use Node.js as a runtime environment. To check if npm is installed you can simply run:
 {% highlight bash %}
-npm init
+npm -v
+{% endhighlight %}
+###Playing with NPM
+Let's assume that our project require jQuery. In order to get it installed just execute:
+{% highlight bash %}
+npm install jquery
 {% endhighlight %}
 This comment is a heart of npm. As a result [package.json][package.json] file will be created.
 
-[scm]: https://en.wikipedia.org/wiki/Version_control
+[vcs]: https://en.wikipedia.org/wiki/Version_control
 [npm]: https://www.npmjs.com/
 [mvn]: https://maven.apache.org/
 [package.json]: https://docs.npmjs.com/files/package.json
+[node.js]: https://nodejs.org
+[what-is-node]:https://www.youtube.com/watch?v=GJmFG4ffJZU

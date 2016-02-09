@@ -1329,6 +1329,18 @@ body:not(.post-template) .post-title {
     float: left;
 }
 
+.tip {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 0 1.75em 0;
+  border: #E3EDF3 1px solid;
+  width: 100%;
+  padding: 10px;
+  overflow: auto;
+  background: #f5f8fa;
+  border-radius: 3px;
+}
+
 
 /* ==========================================================================
    10. Media Queries - Smaller than 900px
