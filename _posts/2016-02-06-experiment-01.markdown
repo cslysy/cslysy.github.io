@@ -18,11 +18,53 @@ NPM can be installed together with Node.js using installer from official [websit
 npm -v
 {% endhighlight %}
 ###Playing with NPM
-Let's assume that our project require jQuery. In order to get it installed just execute:
+Let's assume that our project require jQuery. To download it just execute
 {% highlight bash %}
 npm install jquery
 {% endhighlight %}
-This comment is a heart of npm. As a result [package.json][package.json] file will be created.
+Piece of cake. NPM should create *node_modules/jquery/src* directory containing jquery files.
+
+Our project is growing! It turns out that we need also bootstrap and underscore. We can install them using the same command as before, but this is not convenient when we need to share our project with others. It would be great if we can just define all the dependencies within single configuration file (like pom.xml from maven). NPM can be configured by project.json. We can create it manually or using interactively command. To do so, just type
+{% highlight bash %}
+npm init
+{% endhighlight %}
+and follow the prompts.
+
+Example file may look as follows
+
+{% highlight json %}
+{
+  "name": "awesome-modern-web-project",
+  "version": "1.0.0",
+  "description": "some project description",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "make test"
+  },
+  "author": "cslysy",
+  "license": "ISC"
+}
+{% endhighlight %}
+
+For now, the most important part is *dependencies* and *devDependencies*. Within *dependencies* we can define our runtime project dependencies whereas *devDependencies* defines libraries required to develop like coffeescript to javascript transpiler or unit-test support.
+New dependencies can be added in a two ways, manually or using a command. In order to add bootstrap just add it within *dependencies* just like that:
+{% highlight json %}
+{
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "bootstrap": "^3.3.6"
+  }
+}
+{% endhighlight %}
+and execute
+{% highlight bash %}
+npm init
+{% endhighlight %}
+
 
 [vcs]: https://en.wikipedia.org/wiki/Version_control
 [npm]: https://www.npmjs.com/

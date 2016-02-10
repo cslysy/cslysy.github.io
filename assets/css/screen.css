@@ -906,7 +906,7 @@ body:not(.post-template) .post-title {
 .post-footer {
     position: relative;
     margin: 1rem 0 0 0;
-    padding: 4rem 0 0 0;
+    padding: 2rem 0 0 0;
     border-top: #EBF2F6 1px solid;
 }
 
@@ -958,11 +958,11 @@ body:not(.post-template) .post-title {
    to be flexible at smaller screen sizes while the share
    links remain at a fixed width the whole time */
 .post-footer .share {
-    position: absolute;
     top: 2rem;
     bottom: 3rem;
     right: 0;
     width: 100%;
+    text-align: center;
 }
 
 .post-footer .share a {

@@ -1,6 +1,6 @@
 name: WebLab2
 description: Modern Web Experiments
-meta_description: "Your New Jekyll Site, Blogging about stuffs"
+meta_description: "Modern Web Experiments"
 
 markdown: redcarpet
 highlighter: pygments
@@ -11,6 +11,6 @@ domain_name: 'http://cslysy.github.io'
 google_analytics: 'UA-XXXXXXXX-X'
 
 # Details for the RSS feed generator
-url:            'http://cslysy.github.io/'
+url: 'http://cslysy.github.io/'
 
 gems: [jekyll-paginate]
