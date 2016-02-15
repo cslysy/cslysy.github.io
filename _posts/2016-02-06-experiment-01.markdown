@@ -23,7 +23,7 @@ Let's assume that our project require jQuery. To download it just execute
 npm install jquery
 {% endhighlight %}
 NPM should create *node_modules/jquery* directory containing jquery files. Piece of cake.
-But our project is growing! It turns out that we need also bootstrap and underscore. We can install them using the same command as before, but this is not convenient when we need to share our project with others. It would be great if we can just define all the dependencies within single configuration file (like [pom.xml][pom] from maven). It is possible by project.json descriptor. We can create it manually or using interactively command. To do so, just type
+But our project is growing! It turns out that we need also [bootstrap][bootstrap] and [underscore][underscore]. We can install them using the same command as before, but this is not convenient when we need to share our project with others. It would be great if we can just define all the dependencies within single configuration file (like [pom.xml][pom] from maven). It is possible by project.json descriptor. We can create it manually or using interactively command. To do so, just type
 {% highlight bash %}
 npm init
 {% endhighlight %}
@@ -51,7 +51,7 @@ Example file may look as follows
 
 For now, the most important part is *dependencies* and *devDependencies*. Within *dependencies* we can define our runtime project dependencies whereas *devDependencies* defines libraries required to develop like coffeescript to javascript transpiler or unit-test support.
 
-New dependencies can be added in a two ways, manually or using a command. In order tell npm that we need bootstrap just add it within *dependencies*:
+New dependencies can be added in a two ways, manually or using a command. In order to tell npm that we need bootstrap just add it within *dependencies*:
 {% highlight json %}
 {
   "dependencies": {
@@ -103,3 +103,5 @@ Our dependencies are downloaded but how to use them? Linking them in our project
 [bower]:http://bower.io/
 [wrong-with-bower]:http://bower.io/
 [feed]:{{ site.baseurl }}feed.xml
+[underscore]:http://underscorejs.org/
+[bootstrap]:http://getbootstrap.com/
