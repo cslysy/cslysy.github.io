@@ -5,10 +5,10 @@ date:   2016-02-01 13:00
 categories: Experiments
 disqus: true
 ---
-Libraries/Dependencies/Packages - there are many names for reusable pieces of code. We are using them from the begin of software engineering. They help us to resolve complex problems with relatively small effort. Nowadays, even simple projects may depend on many different sources spread across the internet. Downloading libraries by hand from the websites is no the best way to include them in our projects. Storing libraries on disk, or worse, keeping them in [VCS][vcs] is really bad idea. Staying up-to-date is another issue. Java world, for example, has their [maven][mvn] to automate dependencies management. It works ok with jars not with java scripts. How modern web resolve these problems...
+Libraries/Dependencies/Packages - there are many names for reusable pieces of code. We are using them from the begin of software engineering. They help us to resolve complex problems with relatively small effort. Nowadays, even simple projects may depend on many different sources spread across the internet. Downloading libraries by hand from the websites is not the best way to include them in our projects. Storing libraries on disk, or worse, keeping them in [VCS][vcs] is really bad idea. Staying up-to-date is another issue. Java world, for example, has their [maven][mvn] to automate dependencies management. It works ok with jars not with java scripts. How modern web resolve these problems...
 
 ###Background
-[NPM][npm] (Node package manager) has been invited to help [Node.js][node.js] developers manage their javascript dependencies. It turns out that npm can be successfully used in projects not related to the Node.js technology. Let's leave Node topic for one of the further posts. For know, you should know that __Node.js is a javascript runtime__ (using [V8][v8] engine internally), providing so-called event-driven, non-blocking I/O model designed to build scalable network applications.
+[NPM][npm] (Node package manager) has been invited to help [Node.js][node.js] developers manage their javascript dependencies. It turns out that npm can be successfully used in projects not related to the Node.js technology. Let's leave Node topic for one of the further posts. For now, you should know that __Node.js is a javascript runtime__ (using [V8][v8] engine internally), providing so-called event-driven, non-blocking I/O model designed to build scalable network applications.
 <div class="tip">
 If you are still interested what Node.js is in details I highly recommend you to watch [this][what-is-node] video.
 </div>
@@ -23,7 +23,7 @@ Let's assume that our project require jQuery. To download it just execute
 npm install jquery
 {% endhighlight %}
 NPM should create *node_modules/jquery* directory containing jquery files. Piece of cake.
-But our project is growing! It turns out that we need also bootstrap and underscore. We can install them using the same command as before, but this is not convenient when we need to share our project with others. It would be great if we can just define all the dependencies within single configuration file (like [pom.xml][pom] from maven). It is possible by project.json descriptor. We can create it manually or using interactively command. To do so, just type
+But our project is growing! It turns out that we need also [bootstrap][bootstrap] and [underscore][underscore]. We can install them using the same command as before, but this is not convenient when we need to share our project with others. It would be great if we can just define all the dependencies within single configuration file (like [pom.xml][pom] from maven). It is possible by project.json descriptor. We can create it manually or using interactively command. To do so, just type
 {% highlight bash %}
 npm init
 {% endhighlight %}
@@ -51,7 +51,7 @@ Example file may look as follows
 
 For now, the most important part is *dependencies* and *devDependencies*. Within *dependencies* we can define our runtime project dependencies whereas *devDependencies* defines libraries required to develop like coffeescript to javascript transpiler or unit-test support.
 
-New dependencies can be added in a two ways, manually or using a command. In order tell npm that we need bootstrap just add it within *dependencies*:
+New dependencies can be added in a two ways, manually or using a command. In order to tell npm that we need bootstrap just add it within *dependencies*:
 {% highlight json %}
 {
   "dependencies": {
@@ -103,3 +103,5 @@ Our dependencies are downloaded but how to use them? Linking them in our project
 [bower]:http://bower.io/
 [wrong-with-bower]:http://bower.io/
 [feed]:{{ site.baseurl }}feed.xml
+[underscore]:http://underscorejs.org/
+[bootstrap]:http://getbootstrap.com/
