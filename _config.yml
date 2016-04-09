@@ -8,7 +8,7 @@ logo: false
 paginate: 15
 baseurl: /
 domain_name: 'http://cslysy.github.io'
-google_analytics: 'UA-XXXXXXXX-X'
+google_analytics: 'UA-76149595-1'
 
 # Details for the RSS feed generator
 url: 'http://cslysy.github.io/'
