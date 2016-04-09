@@ -1,6 +1,6 @@
 name: cslysy.github.io
-description: One does not simply be a good programmer
-meta_description: "One does not simply be a good programmer"
+description: One does not simply be good at programming
+meta_description: "One does not simply be good at programming"
 
 markdown: redcarpet
 highlighter: pygments
