@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Experiment 01 - Manage project dependencies using npm"
+title:  "Manage web project dependencies using NPM"
 date:   2016-02-01 13:00
 categories: Experiments
 disqus: true
