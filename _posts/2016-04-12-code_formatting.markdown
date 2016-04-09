@@ -1,21 +1,21 @@
 ---
 layout: post
 title:  "Code formatting or There and Back Again"
-date:   2016-03-07 13:00
+date:   2016-04-12 12:00
 categories: Basics
 disqus: true
 ---
-Today I would like to take you on a journey into the times where [Alexander Fleming][fleming] accidentally rediscovers the antibiotic [Penicillin][penicillin], British inventor [John Logie Baird][johnl] demonstrates the world's first colour television transmission and Software was developed using [punched card][punched_card].
+Today I would like to take you on a journey into the times where [Alexander Fleming][fleming] accidentally rediscovers the antibiotic [Penicillin][penicillin], British inventor [John Logie Baird][johnl] demonstrates the world's first colour television transmission and Software was developed using [Punched cards][punched_card].
 
 Thats right, programmers were marking numbers in specified rows and columns in extremely powerful IDE called IBM PORT-A-PUNCH:
 
 <a title="By Journey234 (Own work) [Public domain], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3AIBM_Port-A-Punch.jpg"><img width="512" alt="IBM Port-A-Punch" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/IBM_Port-A-Punch.jpg/512px-IBM_Port-A-Punch.jpg"/></a>
 
-No debugging, no unit test, no mercy! At least, they didn't have to worry about code formatting, only pure logic and card that encodes data, most commonly 80 characters.
+No debugging, no unit tests, no mercy! At least, they didn't have to worry about code formatting, only pure logic and cards that encodes data, most commonly 80 characters.
 
 ## Displays revolution
 
-Things start changing when computers got displays that could be used in so-called "Text mode" where content was represented as characters instead of individual pixels. As it turned out, one of the most common text mode support 80x25 characters grid. See punched card inspiration? Definitely!
+Things start changing when computers got displays that could be used in so-called "Text mode" where content was represented as characters instead of individual pixels. As it turned out, one of the most common text mode support 80x25 characters grid. See punched cards inspiration? Definitely!
 
 <a title="By Ruben de Rijcke (Own work) [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3AIbm_pc_5150.jpg"><img width="512" alt="Ibm pc 5150" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ibm_pc_5150.jpg/512px-Ibm_pc_5150.jpg"/></a>
 
@@ -54,7 +54,7 @@ Thankfully, COBOL did not become industry standard. These days programmers have 
 ![alt tag](/assets/images/code-formatting/widescreen.png)
 
 That's the part of [AbstractNestablePropertyAccessor][spring-abstract] class from widely known [spring-framework][spring] library.
-For more inspiration please see [spring repository][spring-gh]. Many developers would say that there is nothing wrong with this code and that's the point of this article. Don't get me wrong, I really like Spring, but I'm wondering if someone executed some kind of [uglyfier][uglyfier] on that code. This is very common practice nowadays to write code this way. I asked developers many times why the write code this way? Why so many characters in one line? The most common answer is "Because we can, we have widescreens" so Im asking if they tried to open it on mobile device?
+For more inspiration please see [spring repository][spring-gh]. Many developers would say that there is nothing wrong with this code and that's the point of this article. Don't get me wrong, I really like Spring, but I'm wondering if someone executed some kind of [uglyfier][uglyfier] on that code. This is very common practice nowadays to write code this way. I asked developers many times why the write code this way? Why so many characters in one line? The most common answer is "Because we can, we have widescreen monitors". Next, I asks if they tried to open it on mobile device?
 
 <img src="/assets/images/code-formatting/iphone.png" style="width:100%; display: block; margin: 0 auto;"/>
 
@@ -68,14 +68,16 @@ or:
 - attach it in presentation/blog/book
 - print it
 
-Moreover, it is a well known truth that code is read much more often than it is written. For this reason we should do the best to keep our code in a good shape. If all arguments above are not enough Im getting a white flag and give up.
+Moreover, it is a well known truth that code is read much more often than it is written. For this reason we should do the best to keep our code in a good shape.
+
+If all arguments above are not enough Im getting a white flag and give up.
 <a href="http://geek-and-poke.com">
 <img src="/assets/images/code-formatting/code-formatting-art.jpg" style="width:100%; display: block; margin: 0 auto;"/>
 </a>
 
 Still there? great! If you starting to change you mind and like to improve your code formatting please keep on reading.
 
-## Improve code formatting
+## Code formatting tips
 
 First of all we need to configure our code editor.
 
