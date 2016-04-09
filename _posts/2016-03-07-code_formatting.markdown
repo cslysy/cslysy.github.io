@@ -15,14 +15,11 @@ No debugging, no unit test, no mercy! At least, they didn't have to worry about 
 
 ## Displays revolution
 
-Things start changing when computers got displays that could be used in so-called "Text mode" where content was represented as characters instead of individual pixels. As it turned out one of the most common text mode support 80x25 characters grid. See punched card inspiration? Definitely!
+Things start changing when computers got displays that could be used in so-called "Text mode" where content was represented as characters instead of individual pixels. As it turned out, one of the most common text mode support 80x25 characters grid. See punched card inspiration? Definitely!
 
 <a title="By Ruben de Rijcke (Own work) [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3AIbm_pc_5150.jpg"><img width="512" alt="Ibm pc 5150" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ibm_pc_5150.jpg/512px-Ibm_pc_5150.jpg"/></a>
 
-
-
 Together with displays more advanced hight level programming languages like [COBOL][cobol] and [Fortran][fortran] was invented. Finally programmers were able to write the code using english-like syntax:
-
 
 ````cobol
 IDENTIFICATION DIVISION.
@@ -36,7 +33,7 @@ EXIT PROGRAM.
 END PROGRAM HELLO-WORLD.
 ````
 
-This syntax is, to say the least, ugly. Let's see what other said about COBOL:
+This syntax is, to say the least, ugly. Let's see what others said about COBOL:
 
 >The use of COBOL cripples the mind; its teaching should therefore be regarded as a criminal offense.
 
@@ -57,7 +54,7 @@ Thankfully, COBOL did not become industry standard. These days programmers have 
 ![alt tag](/assets/images/code-formatting/widescreen.png)
 
 That's the part of [AbstractNestablePropertyAccessor][spring-abstract] class from widely known [spring-framework][spring] library.
-For more inspiration please see [spring github repo][spring-gh]. Many developers would say that there is nothing wrong with this code and that's the point of this article. Don't get me wrong, I really like Spring, but I'm wondering if someone executed some kind of [uglyfier][uglyfier] on that code :) This is very common practice nowadays to write the code like that. I asked developers may times why the write code this way? Why so many characters in one line? The most common answer is "Because we can, we have widescreens!" then Im asking if they tried to open it on mobile device?
+For more inspiration please see [spring repository][spring-gh]. Many developers would say that there is nothing wrong with this code and that's the point of this article. Don't get me wrong, I really like Spring, but I'm wondering if someone executed some kind of [uglyfier][uglyfier] on that code. This is very common practice nowadays to write code this way. I asked developers many times why the write code this way? Why so many characters in one line? The most common answer is "Because we can, we have widescreens" so Im asking if they tried to open it on mobile device?
 
 <img src="/assets/images/code-formatting/iphone.png" style="width:100%; display: block; margin: 0 auto;"/>
 
@@ -67,27 +64,25 @@ or diff in side-by-side view during code review or merging?
 
 or:
 
-- debugging when many debug panels are open
-- attach in presentation/blog/book
+- debug when many IDE panels are open
+- attach it in presentation/blog/book
 - print it
 
-Moreover, it is known truth that code is read much more often than it is written. For this reason we should do the best to keep our code in a good shape.
-
-It these arguments are not enough Im getting a white flag and give up.
-
+Moreover, it is a well known truth that code is read much more often than it is written. For this reason we should do the best to keep our code in a good shape. If all arguments above are not enough Im getting a white flag and give up.
+<a href="http://geek-and-poke.com">
 <img src="/assets/images/code-formatting/code-formatting-art.jpg" style="width:100%; display: block; margin: 0 auto;"/>
+</a>
 
-But if you are starting to change you mind and you are interested on how to deal with code formatting issue please keep on reading.
-
+Still there? great! If you starting to change you mind and like to improve your code formatting please keep on reading.
 
 ## Improve code formatting
 
-First of all we need to configure IDE properly.
+First of all we need to configure our code editor.
 
 #### Use spaces instead of tabs for code indentation
 
 This is very common issue. Tab size is not a constant between IDE therefore code may look differently depending on code editor.
-This is for example the same code open in three different editors:
+This is for example the same code open in three of them:
 
 Eclipse:
 <img src="/assets/images/code-formatting/eclipse.png" style="width:100%; display: block; margin: 0 auto;"/>
@@ -96,7 +91,7 @@ Netbeans:
 GitHub:
 <img src="/assets/images/code-formatting/github.png" style="width:100%; display: block; margin: 0 auto;"/>
 
-I bet that this file has been saved using Eclipse :)
+I would bet that this file has been saved using Eclipse.
 
 #### Set proper indentation size
 
@@ -112,29 +107,133 @@ See the difference? We are saving some space without losing readability.
 #### Use right margin
 
 This odd line that goes down the middle of your code is very useful feature.
-
 <img src="/assets/images/code-formatting/right-margin.png" style="width:100%; display: block; margin: 0 auto;"/>
 
-If you code starting to reach the right margin barrier it is the first sign that we are going wrong with formatting. You should stop then for a moment and try to identify if you can break the line in reasonable spot . If not that's fine and don't worry about it to much, just be prepared to elaborate you decision in code review stage.
+If you code starting to reach the right margin barrier it is the first sign that you are going wrong with formatting. You should stop then for a moment and try to identify if you can break the line in reasonable spot. If not that's fine and don't worry about it to much, just be prepared to elaborate you decision in code review stage. My personal preference is set right margin to 80 characters and max characters in line to 100.
 
-My personal preference is set right margin to 80 characters and max characters in line to 100. In addition, you should never rely on automatic code formatter when it comes to line break, it is are usually very bad on that.
+#### Disable automatic line wrapping
+
+You should never rely on automatic code formatter when it comes to line breaks, it is  usually very bad on that.
 
 Automatic code formatter line breaks:
-
 <img src="/assets/images/code-formatting/ide-formatting.png" style="width:100%; display: block; margin: 0 auto;"/>
-
 Manual line breaks:
-
 <img src="/assets/images/code-formatting/manual-formatting.png" style="width:100%; display: block; margin: 0 auto;"/>
 
-Usually, when code could not break without losing readability there is something wrong with design.
+If you decide to break the line, automatic code formatter should respect your decision and do not join already wrapped lines. In eclipse, following property should be set to *false*:
 
+```` xml
+<setting id="org.eclipse.jdt.core.formatter.join_wrapped_lines" value="false"/>
+````
 
+#### Follow 'Paired Brackets' rule when possible
 
+> A bracket should either start/end a line or be paired on the same line.
 
+In short, this code:
 
+````java
+mappedInterceptors.addAll(BeanFactoryUtils.beansOfTypeIncludingAncestors(
+   getApplicationContext(), MappedInterceptor.class, true, false).values());
+````
 
+should be formatted this way:
 
+````java
+mappedInterceptors.addAll(
+   BeanFactoryUtils.beansOfTypeIncludingAncestors(
+      getApplicationContext(), MappedInterceptor.class, true, false
+   ).values()
+);
+````
+
+There are some exceptions like if/for/while where it is hard to apply this rule but just try to use it for a while and you will be surprised how handy it can be. More on this rule can be read directly on its author [blog][paired].
+
+#### User String.format instead of concatenation
+
+String concatenation
+
+```` java
+logger.warn("Replacing custom translator [" + replaced + "] for database '"
+  + dbName + "' with [" + translator + "]");
+````
+
+It is much easier to break the line in reasonable spot using this approach
+
+```` java
+logger.warn(
+  String.format(
+     "Replacing custom translator [%s] for database '%s' with [%s]",
+     replaced, dbName, translator
+  )
+);
+````
+
+#### Take care of class/method/variable names
+
+It is very hard to keep  the code in a good shape when you have to deal with classes like:
+
+- SimpleBeanFactoryAwareAspectInstanceFactory
+- TransactionAwarePersistenceManagerFactoryProxy
+- AbstractAnnotationConfigDispatcherServletInitializer
+- RequestMappingInfoHandlerMethodMappingNamingStrategy
+- HasThisTypePatternTriedToSneakInSomeGenericOrParameterizedTypePatternMatchingStuffAnywhereVisitor
+
+<img src="/assets/images/code-formatting/wat.jpg" style="width:100%; display: block; margin: 0 auto;"/>
+
+No, no, no! If you are going to name your class this way you should go for a walk. Preferably in fresh air.
+
+#### Don't be afraid of small private methods
+
+This
+
+````java
+if (!headers.getConnection().contains("Upgrade")
+   && !headers.getConnection().contains("upgrade")) {
+      handleInvalidConnectHeader(request, response);
+      return false;
+}
+````
+
+Can be refactored to this
+
+````java
+if (isNotUpgradeConnection(headers.getConnection())) {
+   handleInvalidConnectHeader(request, response);
+   return false;
+}
+
+private boolean isNotUpgradeConnection(List<String> connection) {
+  return !headers.getConnection().contains("Upgrade")
+     && !headers.getConnection().contains("upgrade")
+}
+````
+
+#### Use Swiss Knife libraries
+
+Libraries like [Guava][guava] or [Apache Commons][commons] can also save few characters and make the code more readable:
+
+```java
+//Traditional approach
+if (someString != null && !someString.isEmpty()) {
+   //do sth
+}
+
+//Guava
+if (!Strings.isNullOrEmpty(someString)) {
+   //do sth
+};
+
+//Apache Commons
+if (StringUtils.isNotEmpty(someString)) {
+   //do sth
+};
+```
+
+## Summary
+That's all when it comes to my approach to code formatting. I hope that all arguments and advices convinced you to be more careful on that topic. Even nowadays, we are very close to punched card approach and their 80 characters :)
+
+Like this post? Stay tuned by [subscribing][feed] my further blog activities!
 
 [fleming]: https://en.wikipedia.org/wiki/Alexander_Fleming
 [penicillin]: https://en.wikipedia.org/wiki/Penicillin
@@ -147,4 +246,7 @@ Usually, when code could not break without losing readability there is something
 [spring-abstract]:https://github.com/spring-projects/spring-framework/blob/master/spring-beans/src/main/java/org/springframework/beans/AbstractNestablePropertyAccessor.java
 [spring]:https://projects.spring.io/spring-framework/
 [spring-gh]:https://github.com/spring-projects
+[paired]: http://www.yegor256.com/2014/10/23/paired-brackets-notation.html
+[guava]: https://github.com/google/guava
+[commons]: https://commons.apache.org
 [feed]:{{ site.baseurl }}feed.xml
