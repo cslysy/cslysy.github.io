@@ -5,7 +5,7 @@ date:   2016-04-12 12:00
 categories: Basics
 disqus: true
 ---
-Today I would like to take you on a journey into the times where [Alexander Fleming][fleming] accidentally rediscovers the antibiotic [Penicillin][penicillin], British inventor [John Logie Baird][johnl] demonstrates the world's first colour television transmission and Software was developed using [Punched cards][punched_card].
+Today I would like to take you on a journey into the times where [Alexander Fleming][fleming] accidentally rediscovered the antibiotic [Penicillin][penicillin], British inventor [John Logie Baird][johnl] demonstrated the world's first colour television transmission and software was developed using [Punched cards][punched_card].
 
 Thats right, programmers were marking numbers in specified rows and columns in extremely powerful IDE called IBM PORT-A-PUNCH:
 
@@ -21,7 +21,7 @@ Things start changing when computers got displays that could be used in so-calle
 
 Together with displays more advanced hight level programming languages like [COBOL][cobol] and [Fortran][fortran] was invented. Finally programmers were able to write the code using english-like syntax:
 
-````cobol
+````bash
 IDENTIFICATION DIVISION.
 PROGRAM-ID. HELLO-WORLD.
 ENVIRONMENT DIVISION.
@@ -49,12 +49,12 @@ Larry Wall creator of the Perl
 
 ## Nowadays
 
-Thankfully, COBOL did not become industry standard. These days programmers have way better programming languages with tons of libraries and really powerful IDE's. Moreover, there is no limitation of 80 characters in line thanks to amazing widescreen displays. Today our code may look like that:
+Thankfully, COBOL did not become industry standard. These days programmers have way better programming languages with tons of libraries and really powerful IDE's. Moreover, there is no limitation of 80 characters in line thanks to amazing widescreen displays. Today our code may look like this:
 
 ![alt tag](/assets/images/code-formatting/widescreen.png)
 
 That's the part of [AbstractNestablePropertyAccessor][spring-abstract] class from widely known [spring-framework][spring] library.
-For more inspiration please see [spring repository][spring-gh]. Many developers would say that there is nothing wrong with this code and that's the point of this article. Don't get me wrong, I really like Spring, but I'm wondering if someone executed some kind of [uglyfier][uglyfier] on that code. This is very common practice nowadays to write code this way. I asked developers many times why the write code this way? Why so many characters in one line? The most common answer is "Because we can, we have widescreen monitors". Next, I asks if they tried to open it on mobile device?
+For more inspiration please see [spring repository][spring-gh]. Many developers would say that there is nothing wrong with this code and that's the point of this article. I really like Spring but I'm wondering if someone executed some kind of [uglyfier][uglyfier] on that code. This is very common practice nowadays to write code this way. I asked developers many times why the write code this way? Why so many characters in one line? The most common answer is "Because we can, we have widescreen monitors". Next, I asked if they tried to open it on mobile device?
 
 <img src="/assets/images/code-formatting/iphone.png" style="width:100%; display: block; margin: 0 auto;"/>
 
@@ -64,9 +64,9 @@ or diff in side-by-side view during code review or merging?
 
 or:
 
-- debug when many IDE panels are open
-- attach it in presentation/blog/book
 - print it
+- attach it in presentation/blog/book
+- debug when many IDE panels are open
 
 Moreover, it is a well known truth that code is read much more often than it is written. For this reason we should do the best to keep our code in a good shape.
 
@@ -83,8 +83,8 @@ First of all we need to configure our code editor.
 
 #### Use spaces instead of tabs for code indentation
 
-This is very common issue. Tab size is not a constant between IDE therefore code may look differently depending on code editor.
-This is for example the same code open in three of them:
+This is very common issue. Tab size is not a constant between IDE's therefore code may look differently depending on code editor.
+This is for example the same code opened in three of them:
 
 Eclipse:
 <img src="/assets/images/code-formatting/eclipse.png" style="width:100%; display: block; margin: 0 auto;"/>
@@ -97,21 +97,21 @@ I would bet that this file has been saved using Eclipse.
 
 #### Set proper indentation size
 
-4 spaces is most common but I would rather suggest to use 3 instead. Let's take a look on following examples:
+4 spaces is most common but I would rather suggest to use 3 or event 2 instead. Let's take a look on following examples:
 
 4 spaces indentation
 <img src="/assets/images/code-formatting/4spaces.png" style="width:100%; display: block; margin: 0 auto;"/>
 3 spaces indentation
 <img src="/assets/images/code-formatting/3spaces.png" style="width:100%; display: block; margin: 0 auto;"/>
 
-See the difference? We are saving some space without losing readability.
+See the difference? We save some space without losing readability.
 
 #### Use right margin
 
 This odd line that goes down the middle of your code is very useful feature.
 <img src="/assets/images/code-formatting/right-margin.png" style="width:100%; display: block; margin: 0 auto;"/>
 
-If you code starting to reach the right margin barrier it is the first sign that you are going wrong with formatting. You should stop then for a moment and try to identify if you can break the line in reasonable spot. If not that's fine and don't worry about it to much, just be prepared to elaborate you decision in code review stage. My personal preference is set right margin to 80 characters and max characters in line to 100.
+If your code starting to reach the right margin barrier it is the first sign that you are going wrong with formatting. You should stop then for a moment and try to identify if you can break the line in reasonable spot. If not that's fine and don't worry about it to much, just be prepared to elaborate your decision in code review stage. My personal preference is set right margin to 80 characters and max characters in line to 100.
 
 #### Disable automatic line wrapping
 
@@ -122,7 +122,7 @@ Automatic code formatter line breaks:
 Manual line breaks:
 <img src="/assets/images/code-formatting/manual-formatting.png" style="width:100%; display: block; margin: 0 auto;"/>
 
-If you decide to break the line, automatic code formatter should respect your decision and do not join already wrapped lines. In eclipse, following property should be set to *false*:
+If you decide to break the line, automatic code formatter should respect your decision and don't join already wrapped lines. In eclipse, following property should be set to *false*:
 
 ```` xml
 <setting id="org.eclipse.jdt.core.formatter.join_wrapped_lines" value="false"/>
@@ -151,19 +151,19 @@ mappedInterceptors.addAll(
 
 There are some exceptions like if/for/while where it is hard to apply this rule but just try to use it for a while and you will be surprised how handy it can be. More on this rule can be read directly on its author [blog][paired].
 
-#### User String.format instead of concatenation
+#### Use String.format instead of concatenation
 
 String concatenation
 
 ```` java
-logger.warn("Replacing custom translator [" + replaced + "] for database '"
-  + dbName + "' with [" + translator + "]");
+throw new Exception("Could not replace translator [" + replaced + "] for
+   database '" + dbName + "' with [" + translator + "]");
 ````
 
 It is much easier to break the line in reasonable spot using this approach
 
 ```` java
-logger.warn(
+throw new Exception(
   String.format(
      "Replacing custom translator [%s] for database '%s' with [%s]",
      replaced, dbName, translator
@@ -173,7 +173,7 @@ logger.warn(
 
 #### Take care of class/method/variable names
 
-It is very hard to keep  the code in a good shape when you have to deal with classes like:
+It is very hard to keep code in a good shape when you have to deal with classes like these:
 
 - SimpleBeanFactoryAwareAspectInstanceFactory
 - TransactionAwarePersistenceManagerFactoryProxy
@@ -183,7 +183,7 @@ It is very hard to keep  the code in a good shape when you have to deal with cla
 
 <img src="/assets/images/code-formatting/wat.jpg" style="width:100%; display: block; margin: 0 auto;"/>
 
-No, no, no! If you are going to name your class this way you should go for a walk. Preferably in fresh air.
+No, no, no! :) If you are going to name your class this way you should go for a walk. Preferably in fresh air.
 
 #### Don't be afraid of small private methods
 
@@ -233,9 +233,9 @@ if (StringUtils.isNotEmpty(someString)) {
 ```
 
 ## Summary
-That's all when it comes to my approach to code formatting. I hope that all arguments and advices convinced you to be more careful on that topic. Even nowadays, we are very close to punched card approach and their 80 characters :)
+That's all when it comes to my approach to code formatting. I hope that all arguments and advices convinced you to be more careful on that topic. Even nowadays, we are very close to punched card approach and their 80 characters in line :)
 
-Like this post? Stay tuned by [subscribing][feed] my further blog activities!
+If you know other way to improve code formatting please share you experience in comments. Like this post? Stay tuned by [subscribing][feed] my further blog activities!
 
 [fleming]: https://en.wikipedia.org/wiki/Alexander_Fleming
 [penicillin]: https://en.wikipedia.org/wiki/Penicillin
