@@ -234,7 +234,7 @@ if (StringUtils.isNotEmpty(someString)) {
 ## Summary
 That's all when it comes to my approach to code formatting. I hope that all arguments and advices convinced you to be more careful on that topic. Even nowadays, we are very close to punched card approach and their 80 characters in line :)
 
-If you know other way to improve code formatting please share you experience in comments. Like this post? Stay tuned by [subscribing][feed] my further blog activities!
+If you know other ways to improve code formatting please share you experience in comments. Like this post? Stay tuned by [subscribing][feed] my further blog activities!
 
 [fleming]: https://en.wikipedia.org/wiki/Alexander_Fleming
 [penicillin]: https://en.wikipedia.org/wiki/Penicillin
