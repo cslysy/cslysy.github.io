@@ -206,8 +206,7 @@ if (isNotUpgradeConnection(headers.getConnection())) {
 }
 
 private boolean isNotUpgradeConnection(List<String> connection) {
-  return !headers.getConnection().contains("Upgrade")
-     && !headers.getConnection().contains("upgrade")
+  return !connection.contains("Upgrade") && !connection.contains("upgrade")
 }
 ````
 
