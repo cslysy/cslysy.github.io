@@ -54,7 +54,7 @@ Thankfully, COBOL did not become industry standard. These days programmers have 
 ![alt tag](/assets/images/code-formatting/widescreen.png)
 
 That's the part of [AbstractNestablePropertyAccessor][spring-abstract] class from widely known [spring-framework][spring] library.
-For more inspiration please see [spring repository][spring-gh]. Many developers would say that there is nothing wrong with this code and that's the point of this article. I really like Spring but I'm wondering if someone executed some kind of [uglyfier][uglyfier] on that code. This is very common practice nowadays to write code this way. I asked developers many times why the write code this way? Why so many characters in one line? The most common answer is "Because we can, we have widescreen monitors". Next, I asked if they tried to open it on mobile device?
+For more inspiration please see [spring repository][spring-gh]. Many developers would say that there is nothing wrong with this code and that's the point of this article. I really like Spring but I'm wondering if someone executed some kind of [uglyfier][uglyfier] on that code. This is very common practice nowadays to write code this way. I asked developers many times why they write code this way? Why so many characters in one line? The most common answer is "Because we can, we have widescreen monitors". Next, I asked if they tried to open it on mobile device?
 
 <img src="/assets/images/code-formatting/iphone.png" style="width:100%; display: block; margin: 0 auto;"/>
 
