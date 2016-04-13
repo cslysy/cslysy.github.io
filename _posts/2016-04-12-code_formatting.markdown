@@ -165,7 +165,7 @@ It is much easier to break the line in reasonable spot using this approach
 ```` java
 throw new Exception(
   String.format(
-     "Replacing custom translator [%s] for database '%s' with [%s]",
+     "Could not replace translator [%s] for database '%s' with [%s]",
      replaced, dbName, translator
   )
 );
