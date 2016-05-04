@@ -75,7 +75,7 @@ If all arguments above are not enough Im getting a white flag and give up.
 <img src="/assets/images/code-formatting/code-formatting-art.jpg" style="width:100%; display: block; margin: 0 auto;"/>
 </a>
 
-Still there? great! If you starting to change you mind and like to improve your code formatting please keep on reading.
+Still there? Great! If you starting to change you mind and like to improve your code formatting please keep on reading.
 
 ## Code formatting tips
 
@@ -111,7 +111,7 @@ See the difference? We save some space without losing readability.
 This odd line that goes down the middle of your code is very useful feature.
 <img src="/assets/images/code-formatting/right-margin.png" style="width:100%; display: block; margin: 0 auto;"/>
 
-If your code starting to reach the right margin barrier it is the first sign that you are going wrong with formatting. You should stop then for a moment and try to identify if you can break the line in reasonable spot. If not that's fine and don't worry about it to much, just be prepared to elaborate your decision in code review stage. My personal preference is set right margin to 80 characters and max characters in line to 100.
+If your code starting to reach the right margin barrier it is the first sign that you are going wrong with formatting. You should stop then for a moment and try to identify if you can break the line in reasonable spot. If not that's fine and don't worry about it too much, just be prepared to elaborate your decision in code review stage. My personal preference is set right margin to 80 characters and max characters in line to 100.
 
 #### Disable automatic line wrapping
 
