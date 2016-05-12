@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Do not complicate - One-time variables"
-date:   2016-05-12 12:00
+date:   2016-06-12 12:00
 categories: Basics
 disqus: true
 ---
