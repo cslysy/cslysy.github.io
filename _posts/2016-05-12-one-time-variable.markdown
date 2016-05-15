@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Do not complicate - One-time variables"
-date:   2016-06-12 12:00
+date:   2016-05-12 12:00
 categories: Basics
 disqus: true
 ---
 We as a programmers tend to complicate things. A lot and very often. There are so many aspects of our job when we gets blinded and do the unnecessary things here and there. This activities introduces complication, distraction and absurdity.
-For this reason, I decided to start with "Do not complicate" series. First of all, Im aware that some topics, if not the most, are very basic so please do not call me [Captain Obvious][captain-obvious] :) just read on and find out that despite it's simplicity  so many programmers making that fundamental mistakes again and again, including myself.
+For this reason, I decided to start with "Do not complicate" series. First of all, Im aware that some topics, if not the most, are very basic so please do not call me [Captain Obvious][captain-obvious], just read on and find out that despite it's simplicity so many programmers makes that fundamental mistakes again and again, including myself.
 
 In this post I would like to cover one-time variables topic. By one-time variable I mean variable that is used only one time after its declaration.
 
@@ -19,8 +19,7 @@ public void buildPanel(){
 }
 ```
 
-
-Each of us seen such a code, it is very common, no matter how experienced authors are. There are cases when using one-time variable is reasonable but I touch this topic later. For now, let's take a look at this famous quote:
+Each of us seen such a dirty code, it is very common, no matter how experienced authors are. There are cases when using one-time variable is reasonable but I touch this topic later. For now, let's take a look at this famous quote:
 
 
 >Perfection is Achieved Not When There Is Nothing More to Add, But When There Is Nothing Left to Take Away”
@@ -34,13 +33,15 @@ Programming-specific translation may be formed as:
 >Code is perfect not when there is nohing to be add, but when there is nothing left to take away without breaking it and losing readability
 
 
-So code from the example should be written as:
+Following this rule, code from the example should be written as:
 
 ```java
 public void buildPanel(){
   panel.add(new Label("name"));
 }
 ```
+
+We could take away some code without losing readability. Keep in mind this sentence whenever you are going to define new variable and ask yourself "Do I really need it?"
 
 
 ## One-time variables and it's influence on code design
@@ -59,7 +60,7 @@ public void buildPanel(){
 
 Variable `nameLabel` is used twice but in fact it is hidden one-time variable as invoking setter is a part of object initialization. We should always favour constructor initialization over setters. When we follow these rules in case of more complicated object structure then advantages are much more visible.
 
-Let's take a look on these three simple classes implemented in mutable way and used one-time variables:
+Let's take a look on these three simple classes implemented in mutable way:
 
 ```java
 interface SshAuthMethod {
@@ -109,8 +110,8 @@ And immutable code without one time variables:
 
 class UsernamePasswordAuthMethod implements SshAuthMethod {
 
-  private final String userName;
-  private final String password;
+  private String userName;
+  private String password;
 
   public UsernamePasswordAuthMethod(String userName, String password) {
       this.userName = userName;
@@ -124,9 +125,9 @@ class UsernamePasswordAuthMethod implements SshAuthMethod {
 }
 
 class SshConnection {
-  private final String hostname;
-  private final int port;
-  private final SshAuthMethod authMethod;
+  private String hostname;
+  private int port;
+  private SshAuthMethod authMethod;
 
   public void connect(){}
 
@@ -150,19 +151,40 @@ class Application {
 }
 ```
 
-As you can see, making classes immutable and avoiding one-time variables leads us to the very simple and straightforward code. There may be some drawbacks like too many parameters for constructor. In this case you should rethink your class design. If it is possible to break the code into the smaller classes just do it, if not then introduce Builder pattern. The second issue may be code code formatting. In this case I suggest to read on my [thoughts on code formatting][code-formatting], especially excerpt about paired brackets notation.
+As you can see, making classes immutable and avoiding one-time variables leads us to the very simple and straightforward code. You may encounter some obstacles along the way like constructor with too many parameters. In this case you should rethink your class design. If it is possible to break the code into the smaller classes just do it, if not then introduce [Builder][builder] pattern. The second issue may be code formatting of highly composable, variable-free code. In this case I suggest you to read on my [thoughts on code formatting][code-formatting], especially excerpt about paired brackets notation.
 
 ## When to use one-time variables
 
+As I mentioned before, there are places for one-time variable because sometimes we are not able to express our intentions without it.
 
-bla bla bla
+Does this tell you something?
 
+```java
+logger.info(
+  "My favourite day of 2016 is {}",
+  LocalDate.of(2016, Month.SEPTEMBER, 12)
+);
+```
+
+and now:
+
+```java
+LocalDate dayOfProgrammer = LocalDate.of(2016, Month.SEPTEMBER, 12);
+logger.info("My favourite day of 2016 is {}", dayOfProgrammer);
+```
+
+This can be seen even more clearly in unit tests:
+
+```java
+String expectedMessage = "Too many results";
+int anyInt = 9876633;
+Person lastPerson = persons.get(list.size() - 1);
+```
 
 ## Summary
-That's all when it comes to my approach to code formatting. I hope that all arguments and advices convinced you to be more careful on that topic. Even nowadays, we are very close to punched card approach and their 80 characters in line :)
-
-If you know other ways to improve code formatting please share you experience in comments. Like this post? Stay tuned by [subscribing][feed] my further blog activities!
+That's all if it comes to my thoughts on this topic. As I mentioned before, we tend to complicate our code a lot and very often so if you found this post interesting stay tuned by [subscribing][feed] my further blog activities.
 
 [captain-obvious]:https://en.wikipedia.org/wiki/Captain_Obvious
 [code-formatting]: http://cslysy.github.io/basics/2016/04/12/code_formatting.html
+[builder]:https://en.wikipedia.org/wiki/Builder_pattern
 [feed]:{{ site.baseurl }}feed.xml
