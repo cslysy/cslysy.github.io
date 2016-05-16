@@ -6,9 +6,9 @@ categories: Basics
 disqus: true
 ---
 We as a programmers tend to complicate things. A lot and very often. There are so many aspects of our job when we gets blinded and do the unnecessary things here and there. This activities introduces complication, distraction and absurdity.
-For this reason, I decided to start with "Do not complicate" series. First of all, Im aware that some topics, if not the most, are very basic so please do not call me [Captain Obvious][captain-obvious], just read on and find out that despite it's simplicity so many programmers makes that fundamental mistakes again and again, including myself.
+For this reason, I decided to start with "Do not complicate" series. First of all, Im aware that some topics, if not the most, are very basic so please do not call me [Captain Obvious][captain-obvious], just read on and find out that despite its simplicity so many programmers makes that fundamental mistakes again and again, including myself.
 
-In this post I would like to cover one-time variables topic. By one-time variable I mean variable that is used only one time after its declaration.
+In this post I would like to cover one-time variables topic. By one-time variable I mean variable that is used only once after its declaration.
 
 Here it is:
 
@@ -41,10 +41,10 @@ public void buildPanel(){
 }
 ```
 
-We could take away some code without losing readability. Keep in mind this sentence whenever you are going to define new variable and ask yourself "Do I really need it?"
+We could take away some code without losing readability. Keep in mind this sentence whenever you are going to define new variable and ask yourself - do I really need it?
 
 
-## One-time variables and it's influence on code design
+## One-time variables and its influence on code design
 
 Avoiding one-time variable may influence our code design in a very positive way because it favour immutability and make the code more composable.
 
@@ -63,10 +63,6 @@ Variable `nameLabel` is used twice but in fact it is hidden one-time variable as
 Let's take a look on these three simple classes implemented in mutable way:
 
 ```java
-interface SshAuthMethod {
-  void authenticate();
-}
-
 class UsernamePasswordAuthMethod implements SshAuthMethod {
 
   private String userName;
@@ -151,7 +147,7 @@ class Application {
 }
 ```
 
-As you can see, making classes immutable and avoiding one-time variables leads us to the very simple and straightforward code. You may encounter some obstacles along the way like constructor with too many parameters. In this case you should rethink your class design. If it is possible to break the code into the smaller classes just do it, if not then introduce [Builder][builder] pattern. The second issue may be code formatting of highly composable, variable-free code. In this case I suggest you to read on my [thoughts on code formatting][code-formatting], especially excerpt about paired brackets notation.
+As you can see, making classes immutable and avoiding one-time variables leads us to the very simple and straightforward code. You may encounter some obstacles along the way like constructor with too many parameters, in this case you should rethink your class design. If it is possible to break the code into the smaller classes just do it, if not then introduce [Builder][builder] pattern. The second issue may be code formatting of highly composable, variable-free code where I suggest you to read on my [thoughts on code formatting][code-formatting], especially excerpt about paired brackets notation.
 
 ## When to use one-time variables
 
@@ -180,6 +176,8 @@ String expectedMessage = "Too many results";
 int anyInt = 9876633;
 Person lastPerson = persons.get(list.size() - 1);
 ```
+
+In short, if you think that code responsible for creating variable is not sufficient to express your intention then do not hesitate to introduce one-time variable.
 
 ## Summary
 That's all if it comes to my thoughts on this topic. As I mentioned before, we tend to complicate our code a lot and very often so if you found this post interesting stay tuned by [subscribing][feed] my further blog activities.
