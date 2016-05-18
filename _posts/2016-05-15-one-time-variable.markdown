@@ -30,7 +30,7 @@ Antoine de Saint-Exupéry
 
 Programming-specific translation may be formed as:
 
->Code is perfect not when there is nohing to be add, but when there is nothing left to take away without breaking it and losing readability
+>Code is perfect not when there is nothing to be add, but when there is nothing left to take away without breaking it and losing readability
 
 
 Following this rule, code from the example should be written as:
