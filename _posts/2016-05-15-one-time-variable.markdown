@@ -6,7 +6,7 @@ categories: Basics
 disqus: true
 ---
 We as a programmers tend to complicate things. A lot and very often. There are so many aspects of our job when we gets blinded and do the unnecessary things here and there. This activities introduces complication, distraction and absurdity.
-For this reason, I decided to start with "Do not complicate" series. First of all, Im aware that some topics, if not the most, are very basic so please do not call me [Captain Obvious][captain-obvious], just read on and find out that despite its simplicity so many programmers makes that fundamental mistakes again and again, including myself.
+For this reason, I decided to start with "Do not complicate" series. First of all, I'm aware that some topics, if not the most, are very basic so please do not call me [Captain Obvious][captain-obvious], just read on and find out that despite its simplicity so many programmers makes that fundamental mistakes again and again, including myself.
 
 In this post I would like to cover one-time variables topic. By one-time variable I mean variable that is used only once after its declaration.
 
@@ -19,7 +19,7 @@ public void buildPanel(){
 }
 ```
 
-Each of us seen such a dirty code, it is very common, no matter how experienced authors are. There are cases when using one-time variable is reasonable but I touch this topic later. For now, let's take a look at this famous quote:
+Each of us have seen such a dirty code. It is very common, no matter how experienced authors are. There are cases when using one-time variable is reasonable but I touch this topic later. For now, let's take a look at this famous quote:
 
 
 >Perfection is Achieved Not When There Is Nothing More to Add, But When There Is Nothing Left to Take Away”
