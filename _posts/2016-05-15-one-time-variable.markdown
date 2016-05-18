@@ -22,7 +22,7 @@ public void buildPanel(){
 Each of us have seen such a dirty code. It is very common, no matter how experienced authors are. There are cases when using one-time variable is reasonable but I touch this topic later. For now, let's take a look at this famous quote:
 
 
->Perfection is Achieved Not When There Is Nothing More to Add, But When There Is Nothing Left to Take Away”
+>Perfection is Achieved Not When There Is Nothing More to Add, But When There Is Nothing Left to Take Away
 
 <div align="right" style="margin-top:-20px; font-size:0.8em; margin-right:50px">
 Antoine de Saint-Exupéry
