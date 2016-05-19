@@ -151,7 +151,7 @@ As you can see, making classes immutable and avoiding one-time variables leads u
 
 ## When to use one-time variables
 
-As I mentioned before, there are places for one-time variable because sometimes we are not able to express our intentions without it.
+As I mentioned before, there are places for one-time variables because sometimes we are not able to express our intentions without them.
 
 Does this tell you something?
 
@@ -178,6 +178,10 @@ Person lastPerson = persons.get(list.size() - 1);
 ```
 
 In short, if you think that code responsible for creating variable is not sufficient to express your intention then do not hesitate to introduce one-time variable.
+
+<center>
+![alt tag](/assets/images/one-time/programmers-artist.png)
+</center>
 
 ## Summary
 That's all if it comes to my thoughts on this topic. As I mentioned before, we tend to complicate our code a lot and very often so if you found this post interesting stay tuned by [subscribing][feed] my further blog activities.
